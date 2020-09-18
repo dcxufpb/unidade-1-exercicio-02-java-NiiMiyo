@@ -8,7 +8,7 @@ import java.io.*;
 
 public class TestExercicio {
 
-	private String BREAK = System.lineSeparator();
+	private static String BREAK = System.lineSeparator();
 
 	@Test
 	public void exercicio01() {
@@ -48,21 +48,29 @@ public class TestExercicio {
 	@Test
 	public void exercicio02_Customizado() {
 		//Defina seus próprios valores para as variáveis a seguir 
-		CupomFiscal.NOME_LOJA = "";
-		CupomFiscal.LOGRADOURO = "";
-		CupomFiscal.NUMERO = 0;
-		CupomFiscal.COMPLEMENTO = "";
-		CupomFiscal.BAIRRO = "";
-		CupomFiscal.MUNICIPIO = "";
-		CupomFiscal.ESTADO = "";
-		CupomFiscal.CEP = "";
-		CupomFiscal.TELEFONE = "";
-		CupomFiscal.OBSERVACAO = "";
-		CupomFiscal.CNPJ = "";
-		CupomFiscal.INSCRICAO_ESTADUAL = "";
+		CupomFiscal.NOME_LOJA = "Top 10 nomes de lojas";
+		CupomFiscal.LOGRADOURO = "Rua Tchurusbango Tchurusmago";
+		CupomFiscal.NUMERO = 13;
+		CupomFiscal.COMPLEMENTO = "Do lado da casa vizinha";
+		CupomFiscal.BAIRRO = "Bairro do Limoeiro";
+		CupomFiscal.MUNICIPIO = "São Paulo";
+		CupomFiscal.ESTADO = "SP";
+		CupomFiscal.CEP = "08090-284";
+		CupomFiscal.TELEFONE = "(11) 4002-8922";
+		CupomFiscal.OBSERVACAO = "Entre o Campinho e a Lua de Baixo";
+		CupomFiscal.CNPJ = "43.745.249/0001-39";
+		CupomFiscal.INSCRICAO_ESTADUAL = "564.213.199.866";
+
+		String expected = "Top 10 nomes de lojas" + BREAK;
+		expected += "Rua Tchurusbango Tchurusmago, 13 Do lado da casa vizinha" + BREAK;
+		expected += "Bairro do Limoeiro - São Paulo - SP" + BREAK;
+		expected += "CEP:08090-284 Tel (11) 4002-8922" + BREAK;
+		expected += "Entre o Campinho e a Lua de Baixo" + BREAK;
+		expected += "CNPJ: 43.745.249/0001-39" + BREAK;
+		expected += "IE: 564.213.199.866";
 		
 		//E atualize o texto esperado abaixo
-		rodarTestarOutput("" + BREAK);
+		rodarTestarOutput(expected + BREAK);
 	}
 
 	private void rodarTestarOutput(String expected) {
